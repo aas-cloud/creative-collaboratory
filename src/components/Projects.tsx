@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import ProjectCard, { Project } from './ProjectCard';
 
@@ -11,6 +10,15 @@ const projectsData: Project[] = [
     imageUrl: "https://static.wixstatic.com/media/ba664b_3c03aa5a64f44ed79dba9c17d3082a8f~mv2.png/v1/fill/w_2308,h_1318,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/ba664b_3c03aa5a64f44ed79dba9c17d3082a8f~mv2.png",
     category: "Branding",
     tags: ["Branding", "Logo Design", "Packaging"],
+    year: "2022"
+  },
+  {
+    id: "zine",
+    title: "Zine | Editorial Design",
+    description: "A creative editorial design project showcasing modern typography and layout techniques for print media.",
+    imageUrl: "https://static.wixstatic.com/media/ba664b_8839b87c9e8a4b19965d835402d8b6e4~mv2.jpg/v1/fill/w_1519,h_867,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ba664b_8839b87c9e8a4b19965d835402d8b6e4~mv2.jpg",
+    category: "Editorial",
+    tags: ["Editorial", "Print Design", "Typography"],
     year: "2022"
   },
   {
