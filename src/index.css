@@ -85,6 +85,7 @@
   }
 }
 
+/* Reveal Animations */
 .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -96,18 +97,27 @@
   transform: translateY(0);
 }
 
+/* Stagger Animations */
 .stagger-1 { transition-delay: 100ms; }
 .stagger-2 { transition-delay: 200ms; }
 .stagger-3 { transition-delay: 300ms; }
+.stagger-4 { transition-delay: 400ms; }
+.stagger-5 { transition-delay: 500ms; }
+.stagger-6 { transition-delay: 600ms; }
+.stagger-7 { transition-delay: 700ms; }
+.stagger-8 { transition-delay: 800ms; }
 
+/* Hero Clip */
 .hero-clip {
   clip-path: inset(0);
 }
 
+/* Smooth Scroll */
 .smooth-scroll-container {
   @apply scroll-smooth;
 }
 
+/* Project Card Animation */
 .project-card {
   transition: transform 0.4s cubic-bezier(0.45, 0, 0.55, 1), box-shadow 0.4s cubic-bezier(0.45, 0, 0.55, 1);
 }
@@ -132,6 +142,7 @@
   transition: opacity 0.3s ease;
 }
 
+/* Underline Hover Effect */
 .line-hover {
   position: relative;
 }
@@ -150,3 +161,72 @@
 .line-hover:hover::after {
   width: 100%;
 }
+
+/* Parallax Effect */
+.parallax {
+  transform: translateY(var(--parallax-y, 0));
+  transition: transform 0.1s linear;
+}
+
+/* Scale on Scroll Animation */
+.scale-on-scroll {
+  transform: scale(var(--scale, 1));
+  transition: transform 0.1s linear;
+}
+
+/* Rotate Effect */
+.rotate-on-scroll {
+  transform: rotate(var(--rotate, 0deg));
+  transition: transform 0.2s ease-out;
+}
+
+/* Fade on Scroll */
+.fade-on-scroll {
+  opacity: var(--opacity, 0);
+  transition: opacity 0.5s ease;
+}
+
+/* Custom Animation Classes */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Image Animations */
+@keyframes zoom-in-out {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.zoom-animation {
+  animation: zoom-in-out 20s ease-in-out infinite;
+}
+
+/* Appear Animation */
+@keyframes appear {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.appear {
+  animation: appear 1s ease forwards;
+}
+
+/* Grid Animation */
+.grid-animation > * {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.grid-animation.active > *:nth-child(1) { animation: appear 0.5s ease 0.1s forwards; }
+.grid-animation.active > *:nth-child(2) { animation: appear 0.5s ease 0.2s forwards; }
+.grid-animation.active > *:nth-child(3) { animation: appear 0.5s ease 0.3s forwards; }
+.grid-animation.active > *:nth-child(4) { animation: appear 0.5s ease 0.4s forwards; }
+.grid-animation.active > *:nth-child(5) { animation: appear 0.5s ease 0.5s forwards; }
+.grid-animation.active > *:nth-child(6) { animation: appear 0.5s ease 0.6s forwards; }

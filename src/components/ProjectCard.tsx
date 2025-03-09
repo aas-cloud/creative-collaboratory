@@ -19,6 +19,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project, index }: ProjectCardProps) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
 
@@ -53,9 +54,11 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       style={{
         transition: `all 0.8s cubic-bezier(0.45, 0, 0.55, 1) ${index * 0.1}s`
       }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <Link to={`/project/${project.id}`}>
-        <div className="project-image-container relative aspect-[16/9]">
+        <div className="project-image-container relative aspect-[16/10] overflow-hidden">
           {imageRef.current?.complete ? null : (
             <div className="absolute inset-0 bg-muted animate-pulse"></div>
           )}
@@ -63,17 +66,18 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             ref={imageRef}
             src={project.imageUrl}
             alt={project.title}
-            className="project-image w-full h-full object-cover"
+            className={`project-image w-full h-full object-cover transition-transform duration-700 ${isHovered ? 'scale-105' : 'scale-100'}`}
             onLoad={() => {
               if (imageRef.current) {
                 imageRef.current.classList.add('animate-image-fade');
               }
             }}
           />
+          <div className={`absolute inset-0 bg-black/20 transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}></div>
         </div>
         <div className="p-6">
           <div className="flex justify-between items-start mb-2">
-            <h3 className="text-xl font-serif font-medium line-clamp-1">{project.title}</h3>
+            <h3 className="text-xl font-serif font-medium line-clamp-1 group-hover:text-primary transition-colors">{project.title}</h3>
             <span className="text-sm text-muted-foreground">{project.year}</span>
           </div>
           <p className="text-muted-foreground text-sm mb-4 line-clamp-2">

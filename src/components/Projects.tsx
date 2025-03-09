@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import ProjectCard, { Project } from './ProjectCard';
 
@@ -20,6 +21,15 @@ const projectsData: Project[] = [
     category: "Editorial",
     tags: ["Editorial", "Print Design", "Typography"],
     year: "2022"
+  },
+  {
+    id: "museum-emotions",
+    title: "Museum of Emotions | Exhibition",
+    description: "An immersive exhibition design that explores human emotions through interactive installations and visual storytelling.",
+    imageUrl: "https://static.wixstatic.com/media/ba664b_f73a6d45a4a746e89b9a6519b5b3af55~mv2.jpg/v1/fill/w_980,h_551,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ba664b_f73a6d45a4a746e89b9a6519b5b3af55~mv2.jpg",
+    category: "Exhibition",
+    tags: ["Exhibition", "Interactive", "Experience Design"],
+    year: "2023"
   },
   {
     id: "project-1",
@@ -62,7 +72,8 @@ const projectsData: Project[] = [
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [filteredProjects, setFilteredProjects] = useState<Project[]>(projectsData);
-  const [visibleProjectCount, setVisibleProjectCount] = useState(4);
+  const [visibleProjectCount, setVisibleProjectCount] = useState(6);
+  const [isInView, setIsInView] = useState(false);
   
   const categories = ['All', ...Array.from(new Set(projectsData.map(project => project.category)))];
 
@@ -72,29 +83,53 @@ const Projects = () => {
     } else {
       setFilteredProjects(projectsData.filter(project => project.category === activeFilter));
     }
+    // Reset visible count when changing filter
+    setVisibleProjectCount(6);
   }, [activeFilter]);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsInView(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const section = document.getElementById('projects-section');
+    if (section) {
+      observer.observe(section);
+    }
+
+    return () => {
+      if (section) {
+        observer.unobserve(section);
+      }
+    };
+  }, []);
+
   const loadMoreProjects = () => {
-    setVisibleProjectCount(prev => Math.min(prev + 4, filteredProjects.length));
+    setVisibleProjectCount(prev => Math.min(prev + 3, filteredProjects.length));
   };
 
   return (
-    <section id="projects" className="py-20 md:py-28 px-6">
+    <section id="projects" className="py-20 md:py-28 px-6" id="projects-section">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 md:mb-16">
-          <span className="inline-block mb-3 text-sm font-medium tracking-widest uppercase reveal">
+          <span className={`inline-block mb-3 text-sm font-medium tracking-widest uppercase reveal ${isInView ? 'active' : ''}`}>
             Selected Work
           </span>
-          <h2 className="text-3xl md:text-4xl font-serif font-medium mb-6 reveal stagger-1">
+          <h2 className={`text-3xl md:text-4xl font-serif font-medium mb-6 reveal stagger-1 ${isInView ? 'active' : ''}`}>
             Recent Projects
           </h2>
-          <p className="text-muted-foreground max-w-2xl reveal stagger-2">
+          <p className={`text-muted-foreground max-w-2xl reveal stagger-2 ${isInView ? 'active' : ''}`}>
             A collection of my recent design work across various disciplines and industries.
             Each project represents a unique challenge and solution.
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-4 mb-10 reveal stagger-3">
+        <div className={`flex flex-wrap gap-4 mb-10 reveal stagger-3 ${isInView ? 'active' : ''}`}>
           {categories.map((category, index) => (
             <button
               key={index}
@@ -110,19 +145,24 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
           {filteredProjects.slice(0, visibleProjectCount).map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
 
         {visibleProjectCount < filteredProjects.length && (
-          <div className="mt-12 text-center">
+          <div className="mt-16 text-center">
             <button
               onClick={loadMoreProjects}
-              className="px-6 py-3 border border-border rounded-full hover:bg-muted transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              className="px-6 py-3 border border-border rounded-full hover:bg-muted transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 group"
             >
-              Load More
+              <span className="flex items-center gap-2">
+                Load More
+                <svg className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </span>
             </button>
           </div>
         )}
