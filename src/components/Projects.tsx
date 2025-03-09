@@ -5,6 +5,15 @@ import ProjectCard, { Project } from './ProjectCard';
 // Sample project data
 const projectsData: Project[] = [
   {
+    id: "araku",
+    title: "Araku Coffee | Branding",
+    description: "A comprehensive brand identity system for Araku Coffee, focusing on sustainability and premium aesthetics.",
+    imageUrl: "https://static.wixstatic.com/media/ba664b_3c03aa5a64f44ed79dba9c17d3082a8f~mv2.png/v1/fill/w_2308,h_1318,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/ba664b_3c03aa5a64f44ed79dba9c17d3082a8f~mv2.png",
+    category: "Branding",
+    tags: ["Branding", "Logo Design", "Packaging"],
+    year: "2022"
+  },
+  {
     id: "project-1",
     title: "Brand Identity Design",
     description: "A comprehensive brand identity system for a modern fashion label.",
