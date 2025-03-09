@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -81,8 +81,62 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif tracking-tight;
+    @apply font-century tracking-tight;
   }
+
+  h1 {
+    @apply tracking-tighter;
+  }
+}
+
+/* Creative Typography */
+.typography-display {
+  @apply font-century tracking-tighter uppercase;
+  letter-spacing: -0.03em;
+}
+
+.typography-accent {
+  @apply font-century italic;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-muted-foreground;
+}
+
+.text-outline {
+  -webkit-text-stroke: 1px currentColor;
+  color: transparent;
+}
+
+.text-reveal {
+  clip-path: inset(0 100% 0 0);
+}
+
+.active .text-reveal {
+  animation: text-reveal 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+/* Animated Underline */
+.animated-underline {
+  position: relative;
+}
+
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  transform-origin: bottom right;
+  transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.animated-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 /* Reveal Animations */
@@ -119,11 +173,11 @@
 
 /* Project Card Animation */
 .project-card {
-  transition: transform 0.4s cubic-bezier(0.45, 0, 0.55, 1), box-shadow 0.4s cubic-bezier(0.45, 0, 0.55, 1);
+  transition: transform 0.5s cubic-bezier(0.45, 0, 0.55, 1), box-shadow 0.5s cubic-bezier(0.45, 0, 0.55, 1);
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
 }
 
 .project-image-container {
@@ -131,11 +185,11 @@
 }
 
 .project-image {
-  transition: transform 0.8s cubic-bezier(0.45, 0, 0.55, 1);
+  transition: transform 1s cubic-bezier(0.45, 0, 0.55, 1);
 }
 
 .project-card:hover .project-image {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .project-tags {
@@ -162,50 +216,54 @@
   width: 100%;
 }
 
-/* Parallax Effect */
+/* Enhanced Parallax Effect */
 .parallax {
   transform: translateY(var(--parallax-y, 0));
   transition: transform 0.1s linear;
+  will-change: transform;
 }
 
 /* Scale on Scroll Animation */
 .scale-on-scroll {
   transform: scale(var(--scale, 1));
-  transition: transform 0.1s linear;
+  transition: transform 0.2s ease-out;
+  will-change: transform;
 }
 
 /* Rotate Effect */
 .rotate-on-scroll {
   transform: rotate(var(--rotate, 0deg));
-  transition: transform 0.2s ease-out;
+  transition: transform 0.3s ease-out;
+  will-change: transform;
 }
 
 /* Fade on Scroll */
 .fade-on-scroll {
   opacity: var(--opacity, 0);
-  transition: opacity 0.5s ease;
+  transition: opacity 0.7s ease;
 }
 
 /* Custom Animation Classes */
 @keyframes float {
   0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-15px); }
   100% { transform: translateY(0px); }
 }
 
 .float {
-  animation: float 5s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
 }
 
-/* Image Animations */
+/* Enhanced Image Animations */
 @keyframes zoom-in-out {
   0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  50% { transform: scale(1.08); }
   100% { transform: scale(1); }
 }
 
 .zoom-animation {
   animation: zoom-in-out 20s ease-in-out infinite;
+  will-change: transform;
 }
 
 /* Appear Animation */
@@ -224,9 +282,37 @@
   transform: translateY(20px);
 }
 
-.grid-animation.active > *:nth-child(1) { animation: appear 0.5s ease 0.1s forwards; }
-.grid-animation.active > *:nth-child(2) { animation: appear 0.5s ease 0.2s forwards; }
-.grid-animation.active > *:nth-child(3) { animation: appear 0.5s ease 0.3s forwards; }
-.grid-animation.active > *:nth-child(4) { animation: appear 0.5s ease 0.4s forwards; }
-.grid-animation.active > *:nth-child(5) { animation: appear 0.5s ease 0.5s forwards; }
-.grid-animation.active > *:nth-child(6) { animation: appear 0.5s ease 0.6s forwards; }
+.grid-animation > *:nth-child(1) { animation: appear 0.5s ease 0.1s forwards; }
+.grid-animation > *:nth-child(2) { animation: appear 0.5s ease 0.2s forwards; }
+.grid-animation > *:nth-child(3) { animation: appear 0.5s ease 0.3s forwards; }
+.grid-animation > *:nth-child(4) { animation: appear 0.5s ease 0.4s forwards; }
+.grid-animation > *:nth-child(5) { animation: appear 0.5s ease 0.5s forwards; }
+.grid-animation > *:nth-child(6) { animation: appear 0.5s ease 0.6s forwards; }
+
+/* Creative typography animations */
+@keyframes letter-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.letter-float {
+  display: inline-block;
+  animation: letter-float 3s ease-in-out infinite;
+  animation-delay: calc(var(--index) * 0.1s);
+}
+
+/* Split text animation */
+.split-text-container {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.split-text {
+  display: inline-block;
+  transform: translateY(100%);
+  transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.active .split-text {
+  transform: translateY(0);
+}

@@ -114,13 +114,13 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 md:py-28 px-6" id="projects-section">
+    <section id="projects" className="py-20 md:py-28 px-6 projects-parallax" data-speed="0.05">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 md:mb-16">
           <span className={`inline-block mb-3 text-sm font-medium tracking-widest uppercase reveal ${isInView ? 'active' : ''}`}>
             Selected Work
           </span>
-          <h2 className={`text-3xl md:text-4xl font-serif font-medium mb-6 reveal stagger-1 ${isInView ? 'active' : ''}`}>
+          <h2 className={`text-3xl md:text-4xl font-century font-medium mb-6 reveal stagger-1 ${isInView ? 'active' : ''}`}>
             Recent Projects
           </h2>
           <p className={`text-muted-foreground max-w-2xl reveal stagger-2 ${isInView ? 'active' : ''}`}>
@@ -134,7 +134,7 @@ const Projects = () => {
             <button
               key={index}
               onClick={() => setActiveFilter(category)}
-              className={`px-4 py-2 rounded-full text-sm transition-all ${
+              className={`px-4 py-2 rounded-full text-sm transition-all hover:scale-105 ${
                 activeFilter === category
                   ? "bg-primary text-primary-foreground"
                   : "bg-secondary hover:bg-secondary/80"
@@ -145,7 +145,7 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 grid-animation">
           {filteredProjects.slice(0, visibleProjectCount).map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
@@ -155,7 +155,7 @@ const Projects = () => {
           <div className="mt-16 text-center">
             <button
               onClick={loadMoreProjects}
-              className="px-6 py-3 border border-border rounded-full hover:bg-muted transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 group"
+              className="px-6 py-3 border border-border rounded-full hover:bg-muted transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 group hover:scale-105"
             >
               <span className="flex items-center gap-2">
                 Load More

@@ -91,6 +91,15 @@ export default {
 				'image-fade': {
 					'0%': { filter: 'blur(5px)', opacity: '0' },
 					'100%': { filter: 'blur(0)', opacity: '1' }
+				},
+				'text-reveal': {
+					'0%': { clipPath: 'inset(0 100% 0 0)' },
+					'100%': { clipPath: 'inset(0 0 0 0)' }
+				},
+				'letter-spacing': {
+					'0%': { letterSpacing: 'normal' },
+					'50%': { letterSpacing: '0.3em' },
+					'100%': { letterSpacing: 'normal' }
 				}
 			},
 			animation: {
@@ -99,11 +108,14 @@ export default {
 				'fade-in': 'fade-in 0.5s ease-out',
 				'fade-in-up': 'fade-in-up 0.7s ease-out',
 				'slide-in': 'slide-in 0.5s ease-out',
-				'image-fade': 'image-fade 0.8s ease-out'
+				'image-fade': 'image-fade 0.8s ease-out',
+				'text-reveal': 'text-reveal 1s cubic-bezier(0.77, 0, 0.175, 1) forwards',
+				'letter-space': 'letter-spacing 8s ease-in-out infinite'
 			},
 			fontFamily: {
-				sans: ['SF Pro Display', 'Inter', 'sans-serif'],
-				serif: ['Playfair Display', 'serif']
+				sans: ['"Century Gothic"', 'Arial', 'sans-serif'],
+				serif: ['Playfair Display', 'serif'],
+				century: ['"Century Gothic"', 'Arial', 'sans-serif']
 			},
 			transitionTimingFunction: {
 				'smooth': 'cubic-bezier(0.45, 0, 0.55, 1)'
