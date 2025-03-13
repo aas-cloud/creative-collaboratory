@@ -1,6 +1,6 @@
-
 import { useState, useEffect } from 'react';
 import ProjectCard, { Project } from './ProjectCard';
+import { Link } from 'react-router-dom';
 
 // Sample project data
 const projectsData: Project[] = [
@@ -66,6 +66,34 @@ const projectsData: Project[] = [
     category: "Art Direction",
     tags: ["Art Direction", "Exhibition", "Photography"],
     year: "2022"
+  },
+  // New projects added from the Wix site
+  {
+    id: "expressive-typography",
+    title: "Expressive Typography | Editorial",
+    description: "A typographic exploration using bold, expressive lettering to convey emotion and narrative through text design.",
+    imageUrl: "https://static.wixstatic.com/media/ba664b_a05e3e3b6e6e4b70b7a4f6eea9b69655~mv2.jpg/v1/fill/w_940,h_625,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ba664b_a05e3e3b6e6e4b70b7a4f6eea9b69655~mv2.jpg",
+    category: "Typography",
+    tags: ["Typography", "Editorial", "Design"],
+    year: "2022"
+  },
+  {
+    id: "travel-guide",
+    title: "Travel Guide | Publication",
+    description: "A beautifully designed travel guide that showcases destinations through clean typography and immersive imagery.",
+    imageUrl: "https://static.wixstatic.com/media/ba664b_51d9d05ab1a949adb4710d6bc35222b2~mv2.jpg/v1/fill/w_940,h_625,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ba664b_51d9d05ab1a949adb4710d6bc35222b2~mv2.jpg",
+    category: "Publication",
+    tags: ["Publication", "Travel", "Editorial Design"],
+    year: "2022"
+  },
+  {
+    id: "kone-branding",
+    title: "KONE | Brand Identity",
+    description: "A minimalist, modern brand identity design that balances sophistication with accessibility for a global audience.",
+    imageUrl: "https://static.wixstatic.com/media/ba664b_f5699dd95cef4f74b7c50a2f1a408640~mv2.jpg/v1/fill/w_940,h_625,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ba664b_f5699dd95cef4f74b7c50a2f1a408640~mv2.jpg",
+    category: "Branding",
+    tags: ["Branding", "Logo Design", "Identity"],
+    year: "2023"
   }
 ];
 
@@ -166,6 +194,18 @@ const Projects = () => {
             </button>
           </div>
         )}
+        
+        <div className="mt-16 text-center">
+          <Link 
+            to="/projects" 
+            className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 group hover:scale-105"
+          >
+            <span>View All Projects</span>
+            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </Link>
+        </div>
       </div>
     </section>
   );
