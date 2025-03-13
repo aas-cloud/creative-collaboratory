@@ -32,16 +32,7 @@ const projectsData: Project[] = [
     year: "2023"
   },
   {
-    id: "project-1",
-    title: "Brand Identity Design",
-    description: "A comprehensive brand identity system for a modern fashion label.",
-    imageUrl: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1920",
-    category: "Branding",
-    tags: ["Branding", "Logo Design", "Identity"],
-    year: "2023"
-  },
-  {
-    id: "project-2",
+    id: "mobile-app",
     title: "Mobile App UI/UX",
     description: "User experience and interface design for a health and wellness mobile application.",
     imageUrl: "https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&q=80&w=1920",
@@ -50,7 +41,7 @@ const projectsData: Project[] = [
     year: "2023"
   },
   {
-    id: "project-3",
+    id: "ecommerce",
     title: "E-Commerce Website",
     description: "Complete redesign of an e-commerce platform focused on user conversion.",
     imageUrl: "https://images.unsplash.com/photo-1523289333742-be1143f6b766?auto=format&fit=crop&q=80&w=1920",
@@ -59,7 +50,7 @@ const projectsData: Project[] = [
     year: "2022"
   },
   {
-    id: "project-4",
+    id: "photography",
     title: "Photography Exhibition",
     description: "Art direction and curation for a contemporary photography exhibition.",
     imageUrl: "https://images.unsplash.com/photo-1540304453527-62f979142a17?auto=format&fit=crop&q=80&w=1920",
@@ -67,7 +58,6 @@ const projectsData: Project[] = [
     tags: ["Art Direction", "Exhibition", "Photography"],
     year: "2022"
   },
-  // New projects added from the Wix site
   {
     id: "expressive-typography",
     title: "Expressive Typography | Editorial",
@@ -94,6 +84,33 @@ const projectsData: Project[] = [
     category: "Branding",
     tags: ["Branding", "Logo Design", "Identity"],
     year: "2023"
+  },
+  {
+    id: "packaging-design",
+    title: "Packaging Design | FMCG",
+    description: "Creative packaging solution for a premium food product that emphasizes sustainability and visual appeal.",
+    imageUrl: "https://static.wixstatic.com/media/ba664b_312e01b8978d493db65e1a71ae51a855~mv2.jpg/v1/fill/w_940,h_625,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ba664b_312e01b8978d493db65e1a71ae51a855~mv2.jpg",
+    category: "Packaging",
+    tags: ["Packaging", "FMCG", "Sustainable Design"],
+    year: "2023"
+  },
+  {
+    id: "ux-research",
+    title: "UX Research | Digital Service",
+    description: "Comprehensive user research study that informed the redesign of a digital service platform for improved accessibility.",
+    imageUrl: "https://static.wixstatic.com/media/ba664b_6d4a0fba841242ee856346f15fbe94af~mv2.jpg/v1/fill/w_940,h_625,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ba664b_6d4a0fba841242ee856346f15fbe94af~mv2.jpg",
+    category: "UX Research",
+    tags: ["UX Research", "Digital Service", "Accessibility"],
+    year: "2022"
+  },
+  {
+    id: "motion-graphics",
+    title: "Motion Graphics | Brand Animation",
+    description: "Dynamic motion graphics project that brings brand elements to life through fluid animation and storytelling.",
+    imageUrl: "https://static.wixstatic.com/media/ba664b_e7c416c3db78464aa9bf10a602e28e07~mv2.jpg/v1/fill/w_940,h_625,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ba664b_e7c416c3db78464aa9bf10a602e28e07~mv2.jpg",
+    category: "Motion",
+    tags: ["Motion Graphics", "Animation", "Brand Identity"],
+    year: "2023"
   }
 ];
 
@@ -111,7 +128,6 @@ const Projects = () => {
     } else {
       setFilteredProjects(projectsData.filter(project => project.category === activeFilter));
     }
-    // Reset visible count when changing filter
     setVisibleProjectCount(6);
   }, [activeFilter]);
 
