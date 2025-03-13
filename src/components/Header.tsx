@@ -28,7 +28,7 @@ const Header = () => {
           to="/" 
           className="text-xl tracking-wide uppercase font-light hover:tracking-wider transition-all duration-300 hover:opacity-80"
         >
-          Aastha Mehdiratta
+          Aasthamehdiratta.com
         </Link>
         
         <div className="hidden md:flex space-x-8">

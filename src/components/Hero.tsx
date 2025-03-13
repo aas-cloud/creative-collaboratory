@@ -5,11 +5,18 @@ const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const [letters, setLetters] = useState<string[]>([]);
+  const [consciousnessLetters, setConsciousnessLetters] = useState<string[]>([]);
+  const [showTagline, setShowTagline] = useState(false);
   
   useEffect(() => {
-    // Create animated letters for "experiences"
-    const word = "experiences";
-    setLetters(word.split(''));
+    // Create animated letters for "consciousness"
+    const word = "consciousness";
+    setConsciousnessLetters(word.split(''));
+    
+    // Delayed appearance of tagline
+    const timer = setTimeout(() => {
+      setShowTagline(true);
+    }, 4000); // 4 seconds delay
     
     // Intersection Observer for fade-in animations
     const observer = new IntersectionObserver(
@@ -28,6 +35,7 @@ const Hero = () => {
 
     return () => {
       revealElements.forEach((el) => observer.unobserve(el));
+      clearTimeout(timer);
     };
   }, []);
 
@@ -52,13 +60,13 @@ const Hero = () => {
         <span className="inline-block mb-4 text-sm font-medium tracking-widest uppercase reveal font-century letter-space">
           Portfolio
         </span>
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-century font-medium leading-tight mb-8 md:mb-10 reveal stagger-1 typography-display">
+        <h1 className={`text-4xl md:text-6xl lg:text-7xl font-century font-medium leading-tight mb-8 md:mb-10 reveal stagger-1 typography-display ${showTagline ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
           <div className="split-text-container">
-            <span className="split-text">Creating thoughtful</span>
+            <span className="split-text">Design as a quest for</span>
           </div>
           <br className="hidden md:block" /> 
           <div className="flex items-center justify-center flex-wrap">
-            {letters.map((letter, index) => (
+            {consciousnessLetters.map((letter, index) => (
               <span 
                 key={index} 
                 className="letter-float italic"
@@ -67,9 +75,6 @@ const Hero = () => {
                 {letter}
               </span>
             ))}
-          </div>
-          <div className="split-text-container mt-2">
-            <span className="split-text">through design</span>
           </div>
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 reveal stagger-2">
