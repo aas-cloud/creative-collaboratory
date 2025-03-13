@@ -26,7 +26,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link 
           to="/" 
-          className="text-xl font-serif font-medium tracking-tight transition-all hover:opacity-80"
+          className="text-xl tracking-wide uppercase font-light hover:tracking-wider transition-all duration-300 hover:opacity-80"
         >
           Aastha Mehdiratta
         </Link>

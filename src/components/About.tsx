@@ -41,7 +41,7 @@ const About = () => {
               <span className="inline-block mb-3 text-sm font-medium tracking-widest uppercase reveal">
                 About Me
               </span>
-              <h2 className="text-3xl md:text-4xl font-serif font-medium mb-6 reveal stagger-1">
+              <h2 className="text-3xl md:text-4xl font-light uppercase tracking-wider mb-6 reveal stagger-1">
                 Designer & Creative Thinker
               </h2>
               <p className="text-muted-foreground mb-4 reveal stagger-2">

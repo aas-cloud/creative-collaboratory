@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -97,6 +96,11 @@
 
 .typography-accent {
   @apply font-century italic;
+}
+
+.typography-modern {
+  @apply uppercase tracking-wider font-light;
+  letter-spacing: 0.15em;
 }
 
 .text-gradient {
