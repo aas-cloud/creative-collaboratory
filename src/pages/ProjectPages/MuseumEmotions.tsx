@@ -71,13 +71,13 @@ const MuseumEmotionsProject = () => {
             <div className="lg:col-span-2 reveal stagger-3">
               <h2 className="text-2xl font-serif font-medium mb-6">Project Overview</h2>
               <p className="text-muted-foreground mb-6">
-                The Museum of Emotions is an immersive exhibition design that explores the spectrum of human emotions through interactive installations, sensory experiences, and thoughtful spatial design. The project aims to create a space where visitors can explore, identify, and understand different emotional states.
+                The Museum of Emotions is an immersive exhibition design that explores the spectrum of human emotions through interactive installations, sensory experiences, and thoughtful spatial design. The project aims to create a space where visitors can explore, identify, and understand different emotional states while creating meaningful interactions.
               </p>
               <p className="text-muted-foreground mb-6">
                 Each room in the exhibition is dedicated to a specific emotion, featuring unique visual, auditory, and tactile elements that evoke and represent that particular feeling. From joy to melancholy, anger to serenity, the museum offers a journey through the complexity of human emotional experiences.
               </p>
               <p className="text-muted-foreground">
-                The design process involved extensive research into emotional psychology, color theory, sensory design, and interactive technologies to create meaningful and impactful experiences for visitors of all ages.
+                The design process involved extensive research into emotional psychology, color theory, sensory design, and interactive technologies to create meaningful and impactful experiences for visitors of all ages, staying true to the belief that great design is about evoking emotions and creating meaningful interactions.
               </p>
             </div>
             
@@ -130,7 +130,7 @@ const MuseumEmotionsProject = () => {
           <div className="mb-16 reveal stagger-6">
             <h2 className="text-2xl font-serif font-medium mb-6">The Process</h2>
             <p className="text-muted-foreground mb-6">
-              The project began with extensive research into the psychology of emotions, studying how different design elements like color, sound, texture, and space can evoke specific emotional responses. This research phase also included workshops with potential visitors to understand their expectations and experiences.
+              The project began with extensive research into the psychology of emotions, studying how different design elements like color, sound, texture, and space can evoke specific emotional responses. This research-driven approach ensured that the exhibition would tell a compelling emotional story and create meaningful interactions.
             </p>
             <p className="text-muted-foreground mb-6">
               The conceptualization phase followed, where we mapped out the emotional journey and developed the narrative flow of the exhibition. Each room was carefully designed to create a distinct atmosphere related to its specific emotion, using appropriate colors, lighting, sounds, and interactive elements.

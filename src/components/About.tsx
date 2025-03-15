@@ -45,10 +45,10 @@ const About = () => {
                 Designer & Creative Thinker
               </h2>
               <p className="text-muted-foreground mb-4 reveal stagger-2">
-                I'm a multidisciplinary designer with over 5 years of experience creating thoughtful digital experiences. My approach combines strategic thinking with aesthetic sensitivity.
+                I'm a passionate designer and creative thinker, always looking for ways to merge storytelling with functionality. Whether it's crafting immersive packaging experiences for brands like Araku Coffee, refining digital interfaces, or building engaging learning environments, I believe that great design isn't just about aesthetics—it's about evoking emotions and creating meaningful interactions.
               </p>
               <p className="text-muted-foreground mb-6 reveal stagger-3">
-                Through my work, I aim to create designs that are not only visually compelling but also meaningful and functional. I believe in the power of design to solve problems and improve lives.
+                I thrive at the intersection of culture, sustainability, and innovation. My approach to design is deeply research-driven, ensuring that every project I work on tells a story. Whether it's integrating tribal heritage into modern branding or leveraging eco-friendly materials like water-soluble paper for conscious packaging solutions, I aim to push the boundaries of design while staying true to its roots.
               </p>
             </div>
             
@@ -70,12 +70,12 @@ const About = () => {
                 <h3 className="text-lg font-medium mb-3">Experience</h3>
                 <ul className="space-y-3">
                   <li className="text-sm">
-                    <div className="font-medium">Senior Designer</div>
-                    <div className="text-muted-foreground">Creative Studio, 2020-Present</div>
+                    <div className="font-medium">IIT Guwahati & Learnhill Technologies</div>
+                    <div className="text-muted-foreground">Gamifying Curriculums</div>
                   </li>
                   <li className="text-sm">
-                    <div className="font-medium">Visual Designer</div>
-                    <div className="text-muted-foreground">Design Agency, 2018-2020</div>
+                    <div className="font-medium">Volunteer in Auroville</div>
+                    <div className="text-muted-foreground">Nandanam and Oli School</div>
                   </li>
                 </ul>
               </div>
@@ -84,7 +84,7 @@ const About = () => {
             <div className="pt-4 reveal stagger-3">
               <h3 className="text-lg font-medium mb-3">Skills</h3>
               <div className="flex flex-wrap gap-2">
-                {["UI/UX Design", "Brand Identity", "Typography", "Art Direction", "Design Systems", "User Research", "Visual Design", "Prototyping"].map((skill, index) => (
+                {["UI/UX Design", "Brand Identity", "Typography", "Art Direction", "Design Systems", "User Research", "Sustainable Design", "Packaging", "Cultural Design", "Exhibition Design"].map((skill, index) => (
                   <span 
                     key={index} 
                     className="px-3 py-1.5 bg-white rounded-full text-sm"

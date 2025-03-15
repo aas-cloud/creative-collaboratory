@@ -24,7 +24,7 @@ const projectsData: Project[] = [
   {
     id: "museum-emotions",
     title: "Museum of Emotions | Exhibition",
-    description: "An immersive exhibition design that explores human emotions through interactive installations and visual storytelling.",
+    description: "An immersive exhibition design that explores human emotions through interactive installations and visual storytelling, creating meaningful interactions between visitors and the emotional experiences.",
     imageUrl: "https://static.wixstatic.com/media/ba664b_f73a6d45a4a746e89b9a6519b5b3af55~mv2.jpg/v1/fill/w_980,h_551,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ba664b_f73a6d45a4a746e89b9a6519b5b3af55~mv2.jpg",
     category: "Exhibition",
     tags: ["Exhibition", "Interactive", "Experience Design"],
