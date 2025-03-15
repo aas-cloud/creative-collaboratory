@@ -60,9 +60,9 @@ const ArakuProject = () => {
           <div className="relative mb-16 reveal stagger-2">
             <div className="aspect-[16/9] bg-muted rounded-lg overflow-hidden">
               <img 
-                src="https://static.wixstatic.com/media/ba664b_3c03aa5a64f44ed79dba9c17d3082a8f~mv2.png/v1/fill/w_2308,h_1318,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/ba664b_3c03aa5a64f44ed79dba9c17d3082a8f~mv2.png" 
+                src="/lovable-uploads/ebc115e1-483b-42cf-9185-31eb45b574cb.png" 
                 alt="Araku Coffee Branding" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
           </div>
@@ -142,9 +142,9 @@ const ArakuProject = () => {
           
           <div className="aspect-[21/9] bg-muted rounded-lg overflow-hidden mb-16 reveal stagger-7">
             <img 
-              src="https://static.wixstatic.com/media/ba664b_0fd25cb5febd499ba93d28291f32c6f3~mv2.jpg/v1/fill/w_1899,h_809,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ba664b_0fd25cb5febd499ba93d28291f32c6f3~mv2.jpg" 
+              src="/lovable-uploads/ebc115e1-483b-42cf-9185-31eb45b574cb.png" 
               alt="Araku coffee branding showcase" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           </div>
           
