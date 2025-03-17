@@ -1,5 +1,6 @@
 
 import { useEffect, useRef } from 'react';
+import { GraduationCap, Briefcase, Code, Palette, BookText } from 'lucide-react';
 
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -52,22 +53,25 @@ const About = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-2 gap-6 reveal stagger-3">
-              <div>
-                <h3 className="text-lg font-medium mb-3">Education</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 reveal stagger-3">
+              <div className="bg-white/50 p-5 rounded-lg">
+                <div className="flex items-center gap-3 mb-3">
+                  <GraduationCap className="w-5 h-5 text-primary" />
+                  <h3 className="text-lg font-medium">Education</h3>
+                </div>
                 <ul className="space-y-3">
                   <li className="text-sm">
-                    <div className="font-medium">MFA in Design</div>
-                    <div className="text-muted-foreground">Rhode Island School of Design</div>
-                  </li>
-                  <li className="text-sm">
-                    <div className="font-medium">BFA in Visual Communication</div>
-                    <div className="text-muted-foreground">School of Visual Arts</div>
+                    <div className="font-medium">Graphics and communication, B.Des</div>
+                    <div className="text-muted-foreground">The Design Village</div>
                   </li>
                 </ul>
               </div>
-              <div>
-                <h3 className="text-lg font-medium mb-3">Experience</h3>
+              
+              <div className="bg-white/50 p-5 rounded-lg">
+                <div className="flex items-center gap-3 mb-3">
+                  <Briefcase className="w-5 h-5 text-primary" />
+                  <h3 className="text-lg font-medium">Experience</h3>
+                </div>
                 <ul className="space-y-3">
                   <li className="text-sm">
                     <div className="font-medium">IIT Guwahati & Learnhill Technologies</div>
@@ -81,17 +85,51 @@ const About = () => {
               </div>
             </div>
             
-            <div className="pt-4 reveal stagger-3">
-              <h3 className="text-lg font-medium mb-3">Skills</h3>
-              <div className="flex flex-wrap gap-2">
-                {["UI/UX Design", "Brand Identity", "Typography", "Art Direction", "Design Systems", "User Research", "Sustainable Design", "Packaging", "Cultural Design", "Exhibition Design"].map((skill, index) => (
-                  <span 
-                    key={index} 
-                    className="px-3 py-1.5 bg-white rounded-full text-sm"
-                  >
-                    {skill}
-                  </span>
-                ))}
+            <div className="space-y-6 reveal stagger-3">
+              <div className="bg-white/50 p-5 rounded-lg">
+                <div className="flex items-center gap-3 mb-3">
+                  <Palette className="w-5 h-5 text-primary" />
+                  <h3 className="text-lg font-medium">Design Skills</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {["UI/UX Design", "Brand Identity", "Typography", "Art Direction", "Design Systems", "User Research", "Sustainable Design", "Packaging", "Cultural Design", "Exhibition Design", "Storytelling"].map((skill, index) => (
+                    <span 
+                      key={index} 
+                      className="px-3 py-1.5 bg-white rounded-full text-sm"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="bg-white/50 p-5 rounded-lg">
+                <div className="flex items-center gap-3 mb-3">
+                  <Code className="w-5 h-5 text-primary" />
+                  <h3 className="text-lg font-medium">Software Skills</h3>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                  {[
+                    { name: "Photoshop", level: 90 },
+                    { name: "Illustrator", level: 85 },
+                    { name: "InDesign", level: 80 },
+                    { name: "Figma", level: 95 },
+                    { name: "After Effects", level: 75 },
+                    { name: "Blender", level: 60 },
+                    { name: "Premiere Pro", level: 70 },
+                    { name: "XD", level: 85 }
+                  ].map((software, index) => (
+                    <div key={index} className="flex flex-col">
+                      <span className="text-sm font-medium mb-1">{software.name}</span>
+                      <div className="h-2 bg-white/50 rounded-full overflow-hidden">
+                        <div 
+                          className="h-full bg-primary rounded-full"
+                          style={{ width: `${software.level}%` }}
+                        ></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
