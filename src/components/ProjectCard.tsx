@@ -83,7 +83,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         </div>
         <div className="p-6">
           <div className="flex justify-between items-start mb-2">
-            <h3 className="text-xl font-century font-medium line-clamp-1 hover:text-primary transition-colors typography-display">{project.title}</h3>
+            <h3 className="text-xl font-serif font-medium line-clamp-1 hover:text-primary transition-colors">{project.title}</h3>
             <span className="text-sm text-muted-foreground">{project.year}</span>
           </div>
           <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
